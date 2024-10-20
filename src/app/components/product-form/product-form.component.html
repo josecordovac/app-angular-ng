@@ -1,0 +1,14 @@
+<h2>{{ product.id ? 'Editar Producto' : 'Agregar Producto' }}</h2>
+<form (ngSubmit)="saveProduct()">
+  <label for="name">Nombre:</label>
+  <input [(ngModel)]="product.nombre" name="nombre" required />
+
+  <label for="description">Descripción:</label>
+  <input [(ngModel)]="product.descripcion" name="descripcion" required />
+
+  <label for="price">Precio:</label>
+  <input [(ngModel)]="product.precio" name="precio" type="number" required />
+
+  <button type="submit">Guardar</button>
+  <button type="button" (click)="navigateToHome()">Cancelar</button>
+</form>

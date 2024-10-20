@@ -1,0 +1,27 @@
+<h2>Lista de Productos</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Precio</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.id }}</td>
+      <td>{{ product.nombre }}</td>
+      <td>{{ product.descripcion }}</td>
+      <td>{{ product.precio | currency }}</td>
+      <td>
+        <button (click)="navigateToForm(product.id)">Editar</button>
+        <button (click)="deleteProduct(product.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Botón para agregar un nuevo producto -->
+<button (click)="navigateToForm()">Agregar Producto</button>
