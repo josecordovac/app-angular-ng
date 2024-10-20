@@ -2,13 +2,25 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Product, ProductService } from '../../services/product.service';
 import { FormsModule } from '@angular/forms';
+import { CardModule } from 'primeng/card';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { ButtonModule } from 'primeng/button'; // Importar ButtonModule
 
 @Component({
   selector: 'app-product-form',
   standalone: true,
   templateUrl: './product-form.component.html',
   styleUrls: ['./product-form.component.css'],
-  imports: [FormsModule],
+  imports: [
+    FormsModule,
+    CardModule,
+    InputTextModule,
+    InputTextareaModule,
+    InputNumberModule,
+    ButtonModule,
+  ],
 })
 export class ProductFormComponent implements OnInit {
   product: Product = { id: 0, nombre: '', descripcion: '', precio: 0 };

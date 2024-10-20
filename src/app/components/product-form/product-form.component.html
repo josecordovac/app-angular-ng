@@ -1,14 +1,26 @@
-<h2>{{ product.id ? 'Editar Producto' : 'Agregar Producto' }}</h2>
-<form (ngSubmit)="saveProduct()">
-  <label for="name">Nombre:</label>
-  <input [(ngModel)]="product.nombre" name="nombre" required />
-
-  <label for="description">Descripción:</label>
-  <input [(ngModel)]="product.descripcion" name="descripcion" required />
-
-  <label for="price">Precio:</label>
-  <input [(ngModel)]="product.precio" name="precio" type="number" required />
-
-  <button type="submit">Guardar</button>
-  <button type="button" (click)="navigateToHome()">Cancelar</button>
-</form>
+<p-card header="{{ product.id ? 'Editar Producto' : 'Agregar Producto' }}" styleClass="p-shadow-5 p-mb-3">
+    <form (ngSubmit)="saveProduct()" class="p-fluid">
+      <div class="p-field">
+        <label for="name">Nombre</label>
+        <input pInputText id="name" [(ngModel)]="product.nombre" name="name" placeholder="Ingresa el nombre" required />
+      </div>
+  
+      <div class="p-field">
+        <label for="description">Descripción</label>
+        <textarea pInputTextarea id="description" [(ngModel)]="product.descripcion" name="description" 
+                  placeholder="Ingresa una descripción" rows="3" required></textarea>
+      </div>
+  
+      <div class="p-field">
+        <label for="price">Precio</label>
+        <p-inputNumber id="price" [(ngModel)]="product.precio" name="price" mode="currency" currency="USD" 
+                       placeholder="Ingresa el precio" required></p-inputNumber>
+      </div>
+  
+      <div class="p-grid p-justify-end p-mt-3">
+        <button pButton type="submit" label="Guardar" icon="pi pi-check" class="p-mr-2"></button>
+        <button pButton type="button" label="Cancelar" icon="pi pi-times" class="p-button-secondary" 
+                (click)="navigateToHome()"></button>
+      </div>
+    </form>
+  </p-card>  
