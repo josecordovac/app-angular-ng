@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Product, ProductService } from '../../services/product.service';
+import { Product } from '../../models/product.interface';
+import { ProductService } from '../../services/product.service';
 import { Router } from '@angular/router';
 import { Table } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';

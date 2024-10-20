@@ -1,20 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
-export interface Product {
-  id: number;
-  nombre: string;
-  descripcion: string;
-  precio: number;
-}
+import { Product } from '../models/product.interface';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
 
-  private apiUrl = 'http://localhost:8080/api/productos'; // URL del backend
+  private apiUrl = environment.apiUrl;
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json', // Encabezado para JSON

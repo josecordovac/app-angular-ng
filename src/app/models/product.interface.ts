@@ -1,5 +1,6 @@
-export interface IProduct {
-    cdgo: string;
-    dscrpcn: string;
-    cod_cia: string;
-}  
+export interface Product {
+    id: number;
+    nombre: string;
+    descripcion: string;
+    precio: number;
+  }  
