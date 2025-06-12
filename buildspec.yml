@@ -15,7 +15,7 @@ phases:
   post_build:
     commands:
       - echo "Subiendo a S3"
-      - aws s3 sync dist/ s3://$APP_BUCKET/ --delete
+      - aws s3 sync dist/app-ng/browser/ s3://$APP_BUCKET/ --delete
       - echo "Invalidando cache en CloudFront"
       - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_ID --paths "/*"
 
