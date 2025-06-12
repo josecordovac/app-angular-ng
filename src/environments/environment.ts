@@ -1,5 +1,5 @@
 export const environment = {
     production: false,
-    apiUrl: 'http://localhost:8080/api/productos' // URL de desarrollo
+    apiUrl: 'http://44.197.238.25/api/productos' // URL de desarrollo
   };
   
